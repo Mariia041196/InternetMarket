@@ -1,0 +1,15 @@
+.d3 .head:before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 6px);
+    left: 0;
+    right: 0;
+    height: 12px;
+    background: #A6D8CB;
+    z-index: -1;
+}
+.d3 .head_line {
+    background: white;
+    padding: 0 15px;
+    margin-left: 20px;
+}
