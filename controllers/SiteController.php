@@ -26,28 +26,30 @@ class SiteController
     public function actionContact()
     {
         // Переменные для формы
-        $userEmail = false;
-        $userText = false;
+        $userName = false;
+        $userComment = false;
         $result = false;
         // Обработка формы
         if (isset($_POST['submit'])) {
             // Если форма отправлена
             // Получаем данные из формы
-            $userEmail = $_POST['userEmail'];
-            $userText = $_POST['userText'];
+            $userName = $_POST['user_mail'];
+            $userComment = $_POST['comment'];
             // Флаг ошибок
             $errors = false;
             // Валидация полей
-            if (!User::checkEmail($userEmail)) {
+            if (!User::checkEmail($userName)) {
                 $errors[] = 'Неправильный email';
             }
             if ($errors == false) {
                 // Если ошибок нет
-                // Отправляем письмо администратору
-                $adminEmail = 'mariiamuratova96@gmail.com';
+                // Отправляем письмо
+                ContactForm::contactForm();
+
+                /*$adminEmail = 'mariiamuratova96@gmail.com';
                 $message = "Текст: {$userText}. От {$userEmail}";
                 $subject = 'Тема письма';
-                $result = mail($adminEmail, $subject, $message);
+                $result = mail($adminEmail, $subject, $message);*/
                 $result = true;
             }
         }

@@ -24,7 +24,7 @@
                         <div class="row">
                             <div class="col-sm-5">
                                 <div class="view-product">
-                                    <img src="/template/images/1387794855_ngdupwd7thkq3oe.jpeg" alt="" />
+                                    <img src="<?php echo Product::getImage($product['id']); ?>" alt="" />
                                 </div>
                             </div>
                             <div class="col-sm-7">
