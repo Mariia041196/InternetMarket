@@ -32,7 +32,7 @@ class Order
         // Соединение с БД
         $db = Db::getConnection();
         // Получение и возврат результатов
-        $result = $db->query('SELECT id, user_name, user_phone, user_comment date, status FROM product_order ORDER BY id DESC');
+        $result = $db->query('SELECT id, user_name, user_phone,`date`, status, user_comment FROM product_order ORDER BY id DESC');
         $ordersList = array();
         $i = 0;
         while ($row = $result->fetch()) {
@@ -41,6 +41,7 @@ class Order
             $ordersList[$i]['user_phone'] = $row['user_phone'];
             $ordersList[$i]['date'] = $row['date'];
             $ordersList[$i]['status'] = $row['status'];
+            $ordersList[$i]['user_comment'] = $row['user_comment'];
             $i++;
         }
         return $ordersList;

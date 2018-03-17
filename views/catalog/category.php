@@ -20,6 +20,8 @@
     <link href="/template/css/cart.css" rel="stylesheet">
     <link href="/template/css/form.css" rel="stylesheet">
     <link href="/template/css/button.css" rel="stylesheet">
+    <link href="/template/css/pagination.css" rel="stylesheet">
+    <link href="/template/css/drop.css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -128,12 +130,12 @@
                                     <div class="single-products">
 
                                         <div class="product-item">
-                                            <img src="<?php echo Product::getImage($product['id']); ?>" width="200" alt="" />
+                                            <img src="/template/images/product/3.jpg" alt="" style="width:255px; height:255px;" />
                                             <div class="product-list">
                                                 <h3><a href="/product/<?php echo $product['id']; ?>">
                                                         <?php echo $product['name']; ?>
                                                     </a></h3>
-                                                <span class="price"><?php echo $product['price']; ?></span>
+                                                <span class="price">$ <?php echo $product['price']; ?></span>
                                                 <a href="#" data-id="<?php echo $product['id'];?>"
                                                    class="btn btn-default add-to-cart button">
                                                     <i class="fa fa-shopping-cart"></i>В корзину

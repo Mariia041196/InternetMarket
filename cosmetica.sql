@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Мар 11 2018 г., 13:12
+-- Время создания: Мар 17 2018 г., 00:28
 -- Версия сервера: 10.1.26-MariaDB
 -- Версия PHP: 7.1.9
 
@@ -49,12 +49,35 @@ INSERT INTO `category` (`id`, `name`, `sort_order`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `comment`
+--
+
+CREATE TABLE `comment` (
+  `id` int(11) NOT NULL,
+  `userEmail` varchar(50) NOT NULL,
+  `userText` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `comment`
+--
+
+INSERT INTO `comment` (`id`, `userEmail`, `userText`) VALUES
+(1, 'mariiamuratova@gmail.com', 'Сообщение'),
+(2, 'mail@mail.comdc', 'sdcmjlSKDCVJslKDjv'),
+(3, 'mal@mail.ld', ''),
+(4, 'maus@mauo.co', 'Некий текст '),
+(5, 'maus@mauo.co', 'Некий текст '),
+(6, 'maus@mauo.co', 'Некий текст '),
+(7, 'msjh@ja.kd', 'Вы кто?');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `feedback`
 --
 
 CREATE TABLE `feedback` (
-  `id` int(11) NOT NULL,
-  `user_mail` varchar(50) NOT NULL,
   `comment` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -270,10 +293,10 @@ CREATE TABLE `product_order` (
 INSERT INTO `product_order` (`id`, `user_name`, `user_phone`, `user_comment`, `user_id`, `date`, `products`, `status`) VALUES
 (50, 'Mariia', '0987658765', 'Buy the note', 0, '2018-02-27 22:54:24', 'false', 1),
 (49, 'Mariia', '0987658765', 'Buy the note', 0, '2018-02-27 22:53:00', '{\"45\":1}', 1),
-(47, 'Irina', '+3809676545', 'akdsjcc', 8, '2018-02-26 00:44:02', '{\"34\":3,\"35\":6,\"36\":3,\"39\":1}', 1),
 (48, 'Irina', '82678172638', '', 8, '2018-02-26 00:51:35', '{\"34\":1,\"35\":1}', 1),
 (51, 'Irina', '0998765437', '9284r1847987', 8, '2018-02-27 22:56:16', '{\"45\":1,\"44\":1}', 1),
-(53, 'Мария', '+3809676545', ' <script>alert(2)</script>', 0, '2018-03-03 12:06:28', '{\"10\":3}', 1);
+(53, 'Мария', '+3809676545', ' <script>alert(2)</script>', 0, '2018-03-03 12:06:28', '{\"10\":3}', 1),
+(55, 'Ирина', '+3809865476', '', 11, '2018-03-16 19:51:38', '{\"1\":1,\"3\":1,\"4\":1}', 1);
 
 -- --------------------------------------------------------
 
@@ -297,7 +320,10 @@ INSERT INTO `user` (`id`, `name`, `email`, `password`, `role`) VALUES
 (4, 'Мария Муратова', 'mariiamuratova96@gmail.com', '123456', 'admin'),
 (6, 'Masha Muratova', 'Mail@mail.ru', 'lolololol', ''),
 (7, 'Мария', 'mariiamuratova96@gmail.com', 'vehfnjdf', ''),
-(8, 'Irina', 'mail@gmail.com', '111111', '');
+(8, 'Irina', 'mail@gmail.com', '111111', ''),
+(9, 'Денис', 'denis@mail.ru', 'ltybc123', ''),
+(10, '', 'mariiamuratova96@gmail.com', '', ''),
+(11, 'Ирина', 'iramuratova@ukr.net', 'vehfnjdf456', '');
 
 --
 -- Индексы сохранённых таблиц
@@ -310,9 +336,9 @@ ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `feedback`
+-- Индексы таблицы `comment`
 --
-ALTER TABLE `feedback`
+ALTER TABLE `comment`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -341,13 +367,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT для таблицы `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT для таблицы `feedback`
+-- AUTO_INCREMENT для таблицы `comment`
 --
-ALTER TABLE `feedback`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `comment`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT для таблицы `product`
@@ -359,13 +385,13 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT для таблицы `product_order`
 --
 ALTER TABLE `product_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

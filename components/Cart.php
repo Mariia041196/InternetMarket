@@ -82,12 +82,24 @@ class Cart
 
     public static function deleteProduct($id)
     {
+        $productsInCart=[];
+        $productsInCart = $_SESSION['products'];
+        if(array_key_exists($id, $productsInCart)){
+            $productsInCart[$id]--;
+        }
+        if($productsInCart[$id]<=0){
+            unset($productsInCart[$id]);
+        }
+        $_SESSION['products']=$productsInCart;
+        return self::countItems();
+
+
         // Получаем массив с идентификаторами и количеством товаров в корзине
-        $productsInCart = self::getProducts();
+        //$productsInCart = self::getProducts();
         // Удаляем из массива элемент с указанным id
-        unset($productsInCart[$id]);
+        //unset($productsInCart[$id]);
         // Записываем массив товаров с удаленным элементом в сессию
-        $_SESSION['products'] = $productsInCart;
+        //$_SESSION['products'] = $productsInCart;
     }
 
 }

@@ -47,7 +47,6 @@ class UserController
         require_once(ROOT . '/views/user/register.php');
         return true;
     }
-
     /**
      * Action для страницы "Вход на сайт"
      */

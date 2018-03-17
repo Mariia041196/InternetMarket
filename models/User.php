@@ -3,6 +3,21 @@
 class User
 {
 
+    public static function contact($userEmail, $userText)
+    {
+
+        $db = Db::getConnection();
+
+        $sql = 'INSERT INTO comment (userEmail, userText) '
+            . 'VALUES ( :userEmail, :userText)';
+
+        $result = $db->prepare($sql);
+        $result->bindParam(':userEmail', $userEmail, PDO::PARAM_STR);
+        $result->bindParam(':userText', $userText, PDO::PARAM_STR);
+
+        return $result->execute();
+    }
+
     /**
      * Регистрация пользователя
      * @param type $name

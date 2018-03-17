@@ -2,17 +2,20 @@
 
 class ContactForm
 {
-    public static function contactForm($userName, $userComment)
+
+    public static function contact($userEmail, $userText)
     {
-        // Соединение с БД
+
         $db = Db::getConnection();
-        // Текст запроса к БД
-        $sql = 'INSERT INTO feedback (user_mail, comment) '
-            . 'VALUES (:user_mail, :comment)';
+
+        $sql = 'INSERT INTO comment (user_mail, user_comment) '
+            . 'VALUES (:user_mail, :user_comment)';
+
         $result = $db->prepare($sql);
-        $result->bindParam(':user_mail', $userName, PDO::PARAM_STR);
-        $result->bindParam(':comment', $userComment, PDO::PARAM_STR);
-        return $result->execute();
+        $result->bindParam(':user_email', $userEmail, PDO::PARAM_STR);
+        $result->bindParam(':user_comment', $userText, PDO::PARAM_STR);
+
+        return $result;
     }
 
 }

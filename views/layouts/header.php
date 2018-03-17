@@ -20,6 +20,9 @@
         <link href="/template/css/cart.css" rel="stylesheet">
         <link href="/template/css/form.css" rel="stylesheet">
         <link href="/template/css/button.css" rel="stylesheet">
+        <link href="/template/css/footer.php" rel="stylesheet">
+        <link href="/template/css/pagination.css" rel="stylesheet">
+        <link href="/template/css/drop.css" rel="stylesheet">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
@@ -107,7 +110,7 @@
         </ol>
         <div class="carousel-inner">
             <div class="item active">
-                <img src="/template/images/1.jpg" alt="First slide">
+                <img src="/template/images/5.jpg" alt="First slide">
                 <div class="container">
                     <div class="carousel-caption">
                         <h1>Brand</h1>

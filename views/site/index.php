@@ -24,12 +24,12 @@
                                 <div class="single-products">
 
                                     <div class="product-item">
-                                        <img src="/template/images/depositphotos_42772287-stock-illustration-isolated-beautiful-cosmetics-and-brushes.jpg" alt="" />
+                                        <img src="/template/images/product/3.jpg" alt="" style="width:255px; height:255px;"/>
                                         <div class="product-list">
                                             <h3><a href="/product/<?php echo $product['id']; ?>">
                                                     <?php echo $product['name']; ?>
                                                 </a></h3>
-                                            <span class="price"><?php echo $product['price']; ?></span>
+                                            <span class="price">$ <?php echo $product['price']; ?></span>
                                             <a href="#" data-id="<?php echo $product['id'];?>"
                                                class="btn btn-default add-to-cart button">
                                                 <i class="fa fa-shopping-cart"></i>В корзину
